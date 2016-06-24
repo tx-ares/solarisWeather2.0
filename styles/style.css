@@ -15,19 +15,21 @@ p {
 }
 
 body {
-    background: url("blueskies.jpg") 100% 100% no-repeat fixed;
-    background-position: center-top;
-    /* width:100%; */
-    /* background-size: 100%; */
-    /* background-repeat: no-repeat; */
-    /* background-color: #592b1d; */
+	margin:0;
+	background: url("blueskies.jpg") center center no-repeat fixed;
+    
 }
 
 #nav-container {
-    /* position: fixed; */
-   /*  background-color: rgba(41, 41, 41, .25);
-    border-bottom: 2px solid #6D6B6C; */
+	position: relative;
+    /* background: url("blueskies.jpg") center center no-repeat fixed; */
+    height: 200px;
+    background: rgba(0, 0, 110, .8) 100% 100% no-repeat fixed;
     vertical-align: top;
+}
+
+#detailContainer {
+	/* background: url("blueskies.jpg") 100% 100% no-repeat fixed; */
 }
 
 #title {
@@ -42,8 +44,11 @@ body {
     height: 70px;
 }
 
-.mainImg {
-    /* border: 2px solid lawngreen; */
+.buttonContainer {
+	position: absolute;
+    vertical-align: bottom;
+    text-align: center;
+    margin-top:10vh;
 }
 
 .temperature {
@@ -56,8 +61,10 @@ button {
 	border-radius: 25px;
 	padding: 0 40px;
 	width: 30%;
-	margin: 20px 40px;
-	/* text-align: left; */
+	
+	/* font-size: 2em; */
+	border-radius: 25px;
+	/* margin: 20px 40px; */
 	color: ghostwhite;
 	background: rgba(100,100,150, .5);
 }
@@ -93,23 +100,35 @@ canvas {
 }
 
 .hour {
-    /* border: 2px solid cyan; */
-    display: inline-block;
-    padding: 20px;
-    width: 20%;
+    border-bottom: 2px solid slategray;
+    display: block;
+    /* padding: 20px; */
+    /* width: 20%; */
+    font-size: .75em;
+    vertical-align: top;
+}
+
+.hourTime {
+	text-align: left;
+	display:block;
+}
+
+.hourTemp {
+	text-align: right;
 }
 
 #tempContainer {
-	/* margin-top:5vh; */
-	height: 60vh;
+	width:80%;
 	padding: 5vh 0 5vh 0;
-	margin: 2vh 0 2vh 0;
-
+	margin: 5vh auto;
+	background-color: rgba(255,255,255, .4);
+	/* border: 2px solid limegreen; */
+	border-radius: 25px;
 }
 
 /* media queries */
 @media (min-width: 1250px) {
   body {
-    background: url("blueskies.jpg");
-    background-size: 100% 100%;
+    /* background: url("blueskies.jpg"); */
+    /* background-size: 100% 100%; */
   }

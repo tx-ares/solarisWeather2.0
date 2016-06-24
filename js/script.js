@@ -113,15 +113,15 @@ var renderHourly = function(respObj){
         }
 
         var minutes = "0" + timeConvert.getMinutes()
-        htmlString += '<div class="hour">'
-        htmlString += '<p class="hourTime">' + hours + ":" + minutes + dayNight + '</p>'
-        htmlString += '<canvas class="skycon" id="icon1" width="128" height="128" data-icon="' + iconString + '">' + '</canvas>'
-        htmlString += '<p class="hourTemp">' + hourObject.temperature.toPrecision(2) + '&deg;</p>'
-        htmlString += '<p class="hourSummary">' + hourObject.summary + '</p>'
-        htmlString += '</div>'
 
+        htmlString += '<div class="hour">'
+        // htmlString += '<canvas class="skycon" id="' + iconId + '" width="128" height="128" data-icon="' + iconString + '">' + '</canvas>'
+        htmlString += '<p class="hourTime">' + hours + ":" + minutes + dayNight 
+        htmlString += '<span class="hourTemp">' + hourObject.temperature.toPrecision(2) + '&deg;' + '</p>'
+        htmlString += '</div>'
         // skycons(iconString, i + 1)
     }
+
     containerEl.innerHTML = htmlString
     var allSkycons = document.querySelectorAll('canvas.skycon')
 
@@ -175,33 +175,6 @@ var renderDaily = function(respObj){
 
 }
 
-var WeatherView = Backbone.View.extend({
-
-
-  // tagName: "li",
-
-  // className: "document-row",
-
-  // events: {
-  //   "click .icon":          "open",
-  //   "click .button.edit":   "openEditDialog",
-  //   "click .button.delete": "destroy"
-  // },
-
-  // initialize: function() {
-  //   this.listenTo(this.model, "change", this.render);
-  // },
-
-  
-
-	initialize: function(model) {
-		this.listenTo(this.model, this.render)
-	},
-
-	render: function() {
-   		console.log("render fired")
-  	},
-})
 
 function handleForecastTypeClick(eventObj) {
 	console.log("handleForecastTypeClick has fired!")
@@ -216,16 +189,7 @@ function handleForecastTypeClick(eventObj) {
     location.hash = hashData.lat + '/' + hashData.lng + '/' + viewType
 }
 
-// function searchByCity(eventObj) {
-//     if (eventObj.keyCode === 13) {
-//         var inputCity = searchBarEl.value
-//         console.log(inputCity)
-//         searchBarEl.value = ''
-//     }
-// }
-
-var addAllEventListeners = function() {
-	// var searchBarEl = document.querySelector("#locationSearch")
+function addAllEventListeners() {
 	var currentlyButtonEl = document.querySelector(".currently")
 	var hourlyButtonEl = document.querySelector(".hourly")
 	var dailyButtonEl = document.querySelector(".daily")
@@ -233,41 +197,9 @@ var addAllEventListeners = function() {
 	currentlyButtonEl.addEventListener('click', handleForecastTypeClick)
 	hourlyButtonEl.addEventListener('click', handleForecastTypeClick)
 	dailyButtonEl.addEventListener('click', handleForecastTypeClick)
-	// searchBarEl.addEventListener('keydown', searchByCity)
 }
 
-//Skycons for fancy animations.
-function skycons(iconString, i) {
-    var formattedIcon = iconString.toUpperCase().replace(/-/g, "_")
-    var skycons = new Skycons({ "color": "white" });
-    // on Android, a nasty hack is needed: {"resizeClear": true}
 
-    // console.log(iconString)
-    // console.log(i)
-
-    var iconId = "icon" + i
-    console.log(typeof iconId, iconId)
-
-    // you can add to a canvas by it's ID...
-    skycons.add("icon" + i, Skycons[formattedIcon]);
-
-    // ...or by the canvas DOM element itself.
-    //skycons.add(document.getElementById("icon2"), Skycons.RAIN);
-
-    // if you're using the Forecast API, you can also supply
-    // strings: "partly-cloudy-day" or "rain".
-
-    // start animation!
-    skycons.play();
-
-    // you can also halt animation with skycons.pause()
-
-    // want to change the icon? no problem:
-    //skycons.set("icon1", Skycons.PARTLY_CLOUDY_NIGHT);
-
-    // want to remove one altogether? no problem:
-    //skycons.remove("icon2");
-}
 
 //4 - Creating the router is going to many things for us.  We will go step by step..
 var WeatherRouter = Backbone.Router.extend({
@@ -325,6 +257,6 @@ var WeatherRouter = Backbone.Router.extend({
 
 })
 
-var wv = new WeatherView(WeatherModel)
+// var wv = new WeatherView(WeatherModel)
 var rtr = new WeatherRouter()
 
