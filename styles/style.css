@@ -23,7 +23,7 @@ body {
 #nav-container {
 	position: relative;
     /* background: url("blueskies.jpg") center center no-repeat fixed; */
-    height: 200px;
+    height: 150px;
     background: rgba(0, 0, 110, .8) 100% 100% no-repeat fixed;
     vertical-align: top;
 }
@@ -45,26 +45,41 @@ body {
 }
 
 .buttonContainer {
-	position: absolute;
-    vertical-align: bottom;
-    text-align: center;
-    margin-top:10vh;
+	/* position: absolute; */
+    /* vertical-align: bottom; */
+    /* text-align: center; */
+    /* margin: 10vh auto; */
+    border: 2px lightgoldenrodyellow solid;
 }
 
 .temperature {
-    /* border: 2px solid salmon; */
+    font-size:3em;
+    border: 2px solid salmon;
+}
+
+.iconContainer {
+    display: inline-block;
+    margin: 50px auto;
+    border: 2px solid limegreen;
+}
+
+.detailContainer {
+    display: inline-block;
+    vertical-align: top;
+    margin: 50px auto;
+    border: 2px solid darkblue;
 }
 
 button {
 	height: 50px;
 	font-size: 2em;
 	border-radius: 25px;
-	padding: 0 40px;
+	/* padding: 0 40px; */
 	width: 30%;
 	
 	/* font-size: 2em; */
-	border-radius: 25px;
-	/* margin: 20px 40px; */
+	/* border-radius: 25px; */
+	margin: 100px auto;
 	color: ghostwhite;
 	background: rgba(100,100,150, .5);
 }

@@ -76,10 +76,14 @@ var renderCurrent = function(respObj){
 
 	var htmlString = ""
     htmlString += '<div id="weatherContainer">'
+    htmlString += '<div class="iconContainer">'
     htmlString += '<canvas id="icon1" width="128" height="128"></canvas>'
-    htmlString += '<p class="temperature"> Temperature: ' + respObj.currently.temperature + ' °f</p>'
     htmlString += '<p class="rainChance"> Rain chance: ' + respObj.currently.precipProbability + ' %</p>'
-    htmlString += '<p class="summary"> Summary: ' + respObj.currently.summary + '</p>'
+    htmlString += '</div>'
+    htmlString += '<div class="detailContainer">'
+    htmlString += '<p class="temperature"> ' + respObj.currently.temperature + ' °f</p>'
+    htmlString += '<p class="summary"> ' + respObj.currently.summary + '</p>'
+    htmlString += '</div>'
     htmlString += '</div>'
     var iconString = respObj.currently.icon
 
