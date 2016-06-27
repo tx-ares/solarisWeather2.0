@@ -124,7 +124,8 @@ canvas {
     border-bottom: 2px solid slategray;
     display: block;
     /* padding: 20px; */
-    /* width: 20%; */
+    width: 60%;
+    margin: 0 auto;
     font-size: .75em;
     vertical-align: top;
 }
@@ -132,10 +133,15 @@ canvas {
 .hourTime {
 	text-align: left;
 	display:block;
+    background-color:tomato;
 }
 
 .hourTemp {
-	text-align: right;
+	float: right;
+}
+
+.hourSkycon {
+    text-align: center;
 }
 
 #tempContainer {

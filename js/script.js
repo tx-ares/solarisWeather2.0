@@ -96,11 +96,14 @@ var renderHourly = function(respObj){
 	var htmlString = ''
     var hoursArray = respObj.hourly.data
 
-    for (var i = 0; i < 7; i++) {
+    for (var i = 1; i < 7; i++) {
         var hourObject = hoursArray[i]
         console.log(hourObject)
+        
         var iconString = hourObject.icon
         console.log(iconString)
+        var iconId = "icon" + i
+
         var timeStamp = hourObject.time
         var timeConvert = new Date(timeStamp * 1000)
         var hours = (timeConvert.getHours()) % 12;
@@ -118,9 +121,9 @@ var renderHourly = function(respObj){
         var minutes = "0" + timeConvert.getMinutes()
 
         htmlString += '<div class="hour">'
-        // htmlString += '<canvas class="skycon" id="' + iconId + '" width="128" height="128" data-icon="' + iconString + '">' + '</canvas>'
-        htmlString += '<p class="hourTime">' + hours + ":" + minutes + dayNight 
-        htmlString += '<span class="hourTemp">' + hourObject.temperature.toPrecision(2) + '&deg;' + '</p>'
+        htmlString += '<p><span class="hourTime">' + hours + ":" + minutes + dayNight + "</span>"
+        htmlString += '<canvas class="skycon" id="' + iconId + '" width="32" height="32" data-icon="' + iconString + '">' + '</canvas>'
+        htmlString += '<span class="hourTemp">' + hourObject.temperature.toPrecision(2) + '&deg;' + '</span></p>'
         htmlString += '</div>'
         skycons(iconString, i + 1)
     }
@@ -130,7 +133,6 @@ var renderHourly = function(respObj){
 
     for (var i = 0; i < allSkycons.length; i++) {
         var iconData = allSkycons[i].dataset.icon
-        console.log(iconData)
         skycons(iconData, i + 1)
     }
 }
