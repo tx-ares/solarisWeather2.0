@@ -25,9 +25,16 @@ body {
 #nav-container {
 	position: relative;
     /* background: url("blueskies.jpg") center center no-repeat fixed; */
-    height: 130px;
+    height: 180px;
     background: rgba(0, 0, 110, .8) 100% 100% no-repeat fixed;
     vertical-align: top;
+}
+
+h2 {
+    margin: 0 auto;
+    width: 50%;
+    vertical-align: top;
+    /* padding: 10px; */
 }
 
 #weatherContainer {
@@ -65,7 +72,7 @@ body {
 
 .iconContainer {
     display: inline-block;
-    margin: 50px auto;
+    margin: 50px 20px;
     /* border: 2px solid limegreen; */
 }
 
@@ -85,7 +92,7 @@ button {
 	
 	/* font-size: 2em; */
 	/* border-radius: 25px; */
-	margin: 60px auto;
+	margin: 30px auto;
 	color: ghostwhite;
 	background: rgba(100,100,150, .5);
 }
@@ -131,17 +138,18 @@ canvas {
 }
 
 .hourTime {
-	text-align: left;
-	display:block;
-    background-color:tomato;
+	float: left;
+	/* display:block; */
+    /* background-color:tomato; */
 }
 
 .hourTemp {
 	float: right;
+    margin-left: 15%;
 }
 
 .hourSkycon {
-    text-align: center;
+    /* float: center; */
 }
 
 #tempContainer {

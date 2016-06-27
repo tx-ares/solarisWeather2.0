@@ -122,7 +122,7 @@ var renderHourly = function(respObj){
 
         htmlString += '<div class="hour">'
         htmlString += '<p><span class="hourTime">' + hours + ":" + minutes + dayNight + "</span>"
-        htmlString += '<canvas class="skycon" id="' + iconId + '" width="32" height="32" data-icon="' + iconString + '">' + '</canvas>'
+        htmlString += '<canvas class="skycon" id="' + iconId + '" width="64" height="64" data-icon="' + iconString + '">' + '</canvas>'
         htmlString += '<span class="hourTemp">' + hourObject.temperature.toPrecision(2) + '&deg;' + '</span></p>'
         htmlString += '</div>'
         skycons(iconString, i + 1)
@@ -207,7 +207,7 @@ function addAllEventListeners() {
 //Skycons for fancy animations.
 function skycons(iconString, i) {
     var formattedIcon = iconString.toUpperCase().replace(/-/g, "_")
-    var skycons = new Skycons({ "color": "white" });
+    var skycons = new Skycons({ "color": "lightgoldenrodyellow" });
     // on Android, a nasty hack is needed: {"resizeClear": true}
 
     // console.log(iconString)
