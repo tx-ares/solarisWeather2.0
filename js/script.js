@@ -77,19 +77,18 @@ var renderCurrent = function(respObj){
 	var htmlString = ""
     htmlString += '<div id="weatherContainer">'
     htmlString += '<div class="iconContainer">'
-    htmlString += '<canvas id="icon1" width="128" height="128"></canvas>'
-    htmlString += '<p class="rainChance"> Rain chance: ' + respObj.currently.precipProbability + ' %</p>'
+    htmlString += '<canvas id="icon1" width="460" height="460"></canvas>'
     htmlString += '</div>'
     htmlString += '<div class="detailContainer">'
     htmlString += '<p class="temperature"> ' + respObj.currently.temperature + ' °f</p>'
-    htmlString += '<p class="summary"> ' + respObj.currently.summary + '</p>'
+    htmlString += '<p class="rainChance">  ' + respObj.currently.precipProbability + ' %</p>'
     htmlString += '</div>'
     htmlString += '</div>'
     var iconString = respObj.currently.icon
 
-    // console.log(respObj)
+    console.log(iconString)
     containerEl.innerHTML = htmlString
-    // skycons(iconString, 1)
+    skycons(iconString, 1)
 }
 
 var renderHourly = function(respObj){
@@ -123,7 +122,7 @@ var renderHourly = function(respObj){
         htmlString += '<p class="hourTime">' + hours + ":" + minutes + dayNight 
         htmlString += '<span class="hourTemp">' + hourObject.temperature.toPrecision(2) + '&deg;' + '</p>'
         htmlString += '</div>'
-        // skycons(iconString, i + 1)
+        skycons(iconString, i + 1)
     }
 
     containerEl.innerHTML = htmlString
@@ -165,7 +164,7 @@ var renderDaily = function(respObj){
 
         console.log(iconString + " <<< this is getting passed into skycons.")
         console.log(typeof i)
-            // skycons(iconString, i)
+        skycons(iconString, i)
         console.log(htmlString)
     }
 
@@ -179,7 +178,7 @@ var renderDaily = function(respObj){
 
 }
 
-
+//Helper function for our buttons to switch views.
 function handleForecastTypeClick(eventObj) {
 	console.log("handleForecastTypeClick has fired!")
     var viewType = eventObj.target.className
@@ -192,7 +191,7 @@ function handleForecastTypeClick(eventObj) {
         // console.log(hashData)
     location.hash = hashData.lat + '/' + hashData.lng + '/' + viewType
 }
-
+//Helper function for our initializer to activate our button's routing.
 function addAllEventListeners() {
 	var currentlyButtonEl = document.querySelector(".currently")
 	var hourlyButtonEl = document.querySelector(".hourly")
@@ -203,6 +202,38 @@ function addAllEventListeners() {
 	dailyButtonEl.addEventListener('click', handleForecastTypeClick)
 }
 
+//Skycons for fancy animations.
+function skycons(iconString, i) {
+    var formattedIcon = iconString.toUpperCase().replace(/-/g, "_")
+    var skycons = new Skycons({ "color": "white" });
+    // on Android, a nasty hack is needed: {"resizeClear": true}
+
+    // console.log(iconString)
+    // console.log(i)
+
+    var iconId = "icon" + i
+    console.log(typeof iconId, iconId)
+
+    // you can add to a canvas by it's ID...
+    skycons.add("icon" + i, Skycons[formattedIcon]);
+
+    // ...or by the canvas DOM element itself.
+    //skycons.add(document.getElementById("icon2"), Skycons.RAIN);
+
+    // if you're using the Forecast API, you can also supply
+    // strings: "partly-cloudy-day" or "rain".
+
+    // start animation!
+    skycons.play();
+
+    // you can also halt animation with skycons.pause()
+
+    // want to change the icon? no problem:
+    //skycons.set("icon1", Skycons.PARTLY_CLOUDY_NIGHT);
+
+    // want to remove one altogether? no problem:
+    //skycons.remove("icon2");
+}
 
 
 //4 - Creating the router is going to many things for us.  We will go step by step..

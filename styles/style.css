@@ -2,6 +2,8 @@
     box-sizing: border-box;
     text-align: center;
     font-family: Days-fontfacekit;
+    color: ghostwhite;
+
 }
 
 @font-face {
@@ -23,9 +25,13 @@ body {
 #nav-container {
 	position: relative;
     /* background: url("blueskies.jpg") center center no-repeat fixed; */
-    height: 150px;
+    height: 130px;
     background: rgba(0, 0, 110, .8) 100% 100% no-repeat fixed;
     vertical-align: top;
+}
+
+#weatherContainer {
+    font-size: 2em;
 }
 
 #detailContainer {
@@ -54,32 +60,32 @@ body {
 
 .temperature {
     font-size:3em;
-    border: 2px solid salmon;
+    /* border: 2px solid salmon; */
 }
 
 .iconContainer {
     display: inline-block;
     margin: 50px auto;
-    border: 2px solid limegreen;
+    /* border: 2px solid limegreen; */
 }
 
 .detailContainer {
     display: inline-block;
     vertical-align: top;
     margin: 50px auto;
-    border: 2px solid darkblue;
+    /* border: 2px solid darkblue; */
 }
 
 button {
-	height: 50px;
-	font-size: 2em;
+	height: 40px;
+	font-size: 1.5em;
 	border-radius: 25px;
 	/* padding: 0 40px; */
 	width: 30%;
 	
 	/* font-size: 2em; */
 	/* border-radius: 25px; */
-	margin: 100px auto;
+	margin: 60px auto;
 	color: ghostwhite;
 	background: rgba(100,100,150, .5);
 }
@@ -136,7 +142,7 @@ canvas {
 	width:80%;
 	padding: 5vh 0 5vh 0;
 	margin: 5vh auto;
-	background-color: rgba(255,255,255, .4);
+	/* background-color: rgba(255,255,255, .4); */
 	/* border: 2px solid limegreen; */
 	border-radius: 25px;
 }
