@@ -24,7 +24,6 @@ body {
 
 #nav-container {
 	position: relative;
-    height: 130px;
     background: rgba(0, 0, 110, .8) 100% 100% no-repeat fixed;
     vertical-align: top;
 }
