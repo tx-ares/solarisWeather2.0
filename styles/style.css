@@ -24,25 +24,20 @@ body {
 
 #nav-container {
 	position: relative;
-    /* background: url("blueskies.jpg") center center no-repeat fixed; */
-    height: 180px;
     background: rgba(0, 0, 110, .8) 100% 100% no-repeat fixed;
     vertical-align: top;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 5px 5px 5px 5px rgba(255,255,255,.2);
 }
 
 h2 {
     margin: 0 auto;
     width: 50%;
     vertical-align: top;
-    /* padding: 10px; */
 }
 
 #weatherContainer {
     font-size: 2em;
-}
-
-#detailContainer {
-	/* background: url("blueskies.jpg") 100% 100% no-repeat fixed; */
 }
 
 #title {
@@ -57,56 +52,31 @@ h2 {
     height: 70px;
 }
 
-.buttonContainer {
-	/* position: absolute; */
-    /* vertical-align: bottom; */
-    /* text-align: center; */
-    /* margin: 10vh auto; */
-    border: 2px lightgoldenrodyellow solid;
-}
 
 .temperature {
     font-size:3em;
-    /* border: 2px solid salmon; */
 }
 
 .iconContainer {
     display: inline-block;
     margin: 50px 20px;
-    /* border: 2px solid limegreen; */
 }
 
 .detailContainer {
     display: inline-block;
     vertical-align: top;
     margin: 50px auto;
-    /* border: 2px solid darkblue; */
 }
 
 button {
-	height: 40px;
 	font-size: 1.5em;
 	border-radius: 25px;
-	/* padding: 0 40px; */
-	width: 30%;
-	
-	/* font-size: 2em; */
-	/* border-radius: 25px; */
-	margin: 30px auto;
+	width: 18%;
+    margin: 0 2%;
 	color: ghostwhite;
 	background: rgba(100,100,150, .5);
 }
 
-input {
-	/* height: 100px; */
-	margin-top: 5vh;
-	padding: 5px;
-	width: 98%;
-	text-decoration: none;
-	font-size: 3em;
-	background: rgba(0 ,0 ,0, 0);
-	border: none;
-}
 
 canvas {
     vertical-align: top;
@@ -121,16 +91,14 @@ canvas {
 }
 
 .day {
-    /* border: 2px solid cyan; */
     display: inline-block;
     padding: 20px;
     width: 20%;
 }
 
 .hour {
-    border-bottom: 2px solid slategray;
+    border-bottom: 2px solid rgba(255,255,255, .5);
     display: block;
-    /* padding: 20px; */
     width: 60%;
     margin: 0 auto;
     font-size: .75em;
@@ -139,8 +107,6 @@ canvas {
 
 .hourTime {
 	float: left;
-	/* display:block; */
-    /* background-color:tomato; */
 }
 
 .hourTemp {
@@ -148,22 +114,11 @@ canvas {
     margin-left: 15%;
 }
 
-.hourSkycon {
-    /* float: center; */
-}
 
 #tempContainer {
 	width:80%;
 	padding: 5vh 0 5vh 0;
 	margin: 5vh auto;
-	/* background-color: rgba(255,255,255, .4); */
-	/* border: 2px solid limegreen; */
 	border-radius: 25px;
 }
 
-/* media queries */
-@media (min-width: 1250px) {
-  body {
-    /* background: url("blueskies.jpg"); */
-    /* background-size: 100% 100%; */
-  }
