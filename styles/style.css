@@ -17,15 +17,17 @@ p {
 }
 
 body {
-	margin:0;
-	background: url("blueskies.jpg") center center no-repeat fixed;
+    margin:0;
+    background: url("blueskies.jpg") center center no-repeat fixed;
     
 }
 
 #nav-container {
-	position: relative;
+    position: relative;
     background: rgba(0, 0, 110, .8) 100% 100% no-repeat fixed;
     vertical-align: top;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 5px 5px 5px 5px rgba(255,255,255,.2);
 }
 
 h2 {
@@ -37,7 +39,6 @@ h2 {
 #weatherContainer {
     font-size: 2em;
 }
-
 
 #title {
     font-family: Days-fontfacekit;
@@ -51,9 +52,6 @@ h2 {
     height: 70px;
 }
 
-.buttonContainer {
-    border: 2px lightgoldenrodyellow solid;
-}
 
 .temperature {
     font-size:3em;
@@ -71,36 +69,25 @@ h2 {
 }
 
 button {
-	height: 40px;
-	font-size: 1.5em;
-	border-radius: 25px;
-	width: 30%;
-	margin: 30px auto;
-	color: ghostwhite;
-	background: rgba(100,100,150, .5);
+    font-size: 1.5em;
+    border-radius: 25px;
+    width: 18%;
+    margin: 0 2%;
+    color: ghostwhite;
+    background: rgba(100,100,150, .5);
 }
 
-input {
-	/* height: 100px; */
-	margin-top: 5vh;
-	padding: 5px;
-	width: 98%;
-	text-decoration: none;
-	font-size: 3em;
-	background: rgba(0 ,0 ,0, 0);
-	border: none;
-}
 
 canvas {
     vertical-align: top;
 }
 
 #locationSeach {
-	color:ghostwhite;
+    color:ghostwhite;
 }
 
 #locationSearch:focus {
-	border: none;
+    border: none;
 }
 
 .day {
@@ -110,9 +97,8 @@ canvas {
 }
 
 .hour {
-    border-bottom: 2px solid slategray;
+    border-bottom: 2px solid rgba(255,255,255, .5);
     display: block;
-    /* padding: 20px; */
     width: 60%;
     margin: 0 auto;
     font-size: .75em;
@@ -120,30 +106,18 @@ canvas {
 }
 
 .hourTime {
-	float: left;
-	
+    float: left;
 }
 
 .hourTemp {
-	float: right;
+    float: right;
     margin-left: 15%;
 }
 
-.hourSkycon {
-    /* float: center; */
-}
 
 #tempContainer {
-	width:80%;
-	padding: 5vh 0 5vh 0;
-	margin: 5vh auto;
-	/* background-color: rgba(255,255,255, .4); */
-	border-radius: 25px;
+    width:80%;
+    padding: 5vh 0 5vh 0;
+    margin: 5vh auto;
+    border-radius: 25px;
 }
-
-/* media queries */
-@media (min-width: 1250px) {
-  body {
-    /* background: url("blueskies.jpg"); */
-    /* background-size: 100% 100%; */
-  }
