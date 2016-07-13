@@ -17,13 +17,13 @@ p {
 }
 
 body {
-	margin:0;
-	background: url("blueskies.jpg") center center no-repeat fixed;
+    margin:0;
+    background: url("blueskies.jpg") center center no-repeat fixed;
     
 }
 
 #nav-container {
-	position: relative;
+    position: relative;
     background: rgba(0, 0, 110, .8) 100% 100% no-repeat fixed;
     vertical-align: top;
     border-radius: 0 0 25px 25px;
@@ -83,11 +83,11 @@ canvas {
 }
 
 #locationSeach {
-	color:ghostwhite;
+    color:ghostwhite;
 }
 
 #locationSearch:focus {
-	border: none;
+    border: none;
 }
 
 .day {
@@ -110,7 +110,7 @@ canvas {
 }
 
 .hourTemp {
-	float: right;
+    float: right;
     margin-left: 15%;
 }
 
