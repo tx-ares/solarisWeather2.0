@@ -36,9 +36,10 @@ h2 {
     vertical-align: top;
 }
 
-#locIcon {
-    font-size: 24px;
+.fa {
+    font-size: 2em;
     color: ghostwhite;
+    text-shadow: 2px 5px 3px rgba(10,10,10,.5);
 }
 
 #weatherContainer {
@@ -80,6 +81,8 @@ button {
     margin: 0 2%;
 	color: ghostwhite;
 	background: rgba(100,100,150, .5);
+    text-shadow: 2px 5px 3px rgba(10,10,10,.5);
+
 }
 
 
