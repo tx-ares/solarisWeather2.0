@@ -19,7 +19,7 @@ p {
 body {
     margin:0;
     background: url("blueskies.jpg") center center no-repeat fixed;
-    
+    background-size: cover;
 }
 
 #nav-container {
