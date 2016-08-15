@@ -22,10 +22,23 @@ var geolocate = function() {
 		location.hash = lat + "/" + lng + "/current"
 	}
 
-	var errorCallback = function(err){
-		throw new err("Cannot find geolocation.  Check browser settings for location services.")
+    // *** This is experimental error messaging.  Currently fixing cross origin issues. *** 
+    var geoError = function(message){
+        this.message = message
+        console.log(this.message)
+
+        var htmlString = ""
+        htmlString += '<div id="weatherContainer"> Cannot find geolocation. Check browser settings for location services.</div>'
+        containerEl.innerHTML = htmlString
+    }
+
+	var errorCallback = function(){
+		throw new geoError("Cannot find geolocation.  Check browser settings for location services.")
 	}
-	//8 - Now inside geolocate we will use the native geolocation function to get our coordinates, along with the 2 parameters , 1st one in case of successful coordinate retrieval , and 2nd if it fails.
+
+    // ****************************************************************************************
+	
+    //8 - Now inside geolocate we will use the native geolocation function to get our coordinates, along with the 2 parameters , 1st one in case of successful coordinate retrieval , and 2nd if it fails.
 	navigator.geolocation.getCurrentPosition(successFunction, errorCallback)
 }
 
@@ -258,7 +271,9 @@ var WeatherRouter = Backbone.Router.extend({
 		var wm = new WeatherModel(lat,lng) 
 
 		// 14 -  And now, we can use another reserved function called 'fetch()' which specifically looks for our built in function called 'url' in the weather model.
-		wm.fetch().then(function(respObj){
+		wm.fetch({
+            dataType: 'jsonP'
+        }).then(function(respObj){
 			renderCurrent(respObj)
 		})
 
