@@ -1,3 +1,5 @@
+/* Default Styles  */
+
 * {
     box-sizing: border-box;
     text-align: center;
@@ -12,6 +14,8 @@
     src: url('Days-webfont.eot') format('eot'), url('Days-webfont.woff') format('woff'), url('Days-webfont.ttf') format('truetype'), url('Days-webfont.svg') format('svg');
 }
 
+/*********************/
+
 p {
     font-size: 2em;
 }
@@ -22,6 +26,12 @@ body {
     background-size: cover;
 }
 
+h2 {
+    margin: 0 auto;
+    width: 50%;
+    vertical-align: top;
+}
+
 #nav-container {
     position: relative;
     background: rgba(0, 0, 110, .8) 100% 100% no-repeat fixed;
@@ -30,16 +40,15 @@ body {
     box-shadow: 5px 5px 5px 5px rgba(255,255,255,.2);
 }
 
-h2 {
-    margin: 0 auto;
-    width: 50%;
-    vertical-align: top;
-}
-
 .fa {
     font-size: 2em;
     color: ghostwhite;
     text-shadow: 2px 5px 3px rgba(10,10,10,.5);
+}
+
+.errcloud {
+    color:  white;
+    fill: currentcolor;
 }
 
 #weatherContainer {
@@ -57,7 +66,6 @@ h2 {
     width: 70px;
     height: 70px;
 }
-
 
 .temperature {
     font-size:3em;
@@ -82,13 +90,15 @@ button {
 	color: ghostwhite;
 	background: rgba(100,100,150, .5);
     text-shadow: 2px 5px 3px rgba(10,10,10,.5);
-
 }
 
+/* Skycon Container */
 
 canvas {
     vertical-align: top;
 }
+
+/* Search Bar */
 
 #locationSeach {
     color:ghostwhite;
@@ -97,6 +107,8 @@ canvas {
 #locationSearch:focus {
     border: none;
 }
+
+/* Daily Contents */
 
 .day {
     display: inline-block;
@@ -122,11 +134,9 @@ canvas {
     margin-left: 15%;
 }
 
-
 #tempContainer {
 	width:80%;
 	padding: 5vh 0 5vh 0;
 	margin: 5vh auto;
 	border-radius: 25px;
 }
-

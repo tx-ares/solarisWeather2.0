@@ -22,13 +22,13 @@ var geolocate = function() {
 		location.hash = lat + "/" + lng + "/current"
 	}
 
-    // *** This is experimental error messaging.  Currently fixing cross origin issues. *** 
+    // *** This is experimental error messaging.  Currently fixing cross origin issues for chrome. *** 
     var geoError = function(message){
         this.message = message
         console.log(this.message)
 
         var htmlString = ""
-        htmlString += '<div id="weatherContainer"> Cannot find geolocation. Check browser settings for location services.</div>'
+        htmlString += '<div id="weatherContainer"> Cannot find geolocation. Check browser settings for location services. <img src="images/error.svg" class="errcloud"></div>'
         containerEl.innerHTML = htmlString
     }
 
@@ -76,12 +76,7 @@ var WeatherModel = Backbone.Model.extend({
 	initialize: function(inputLat, inputLng) {
 		this.lat = inputLat
 		this.lng = inputLng
-	},
-
-	// _render: function() {
-
-	// }
-
+	}
 
 })
 
